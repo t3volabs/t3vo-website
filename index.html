@@ -14,6 +14,10 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#EC4899',
+                    },
                 },
             },
         }
@@ -22,47 +26,56 @@
 <body class="bg-gray-900 text-gray-100 font-sans min-h-screen">
     <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 bg-gray-800/80 backdrop-blur-md border-b border-gray-700">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">t3vo</a>
-            <div class="flex items-center gap-6">
-                <a href="https://github.com/t3volabs" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-                <a href="https://app.t3vo.com" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                    Launch App
-                </a>
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">t3vo</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#features" class="text-gray-300 hover:text-white transition-colors">Features</a>
+                    <a href="#security" class="text-gray-300 hover:text-white transition-colors">Security</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white transition-colors">Pricing</a>
+                    <a href="#faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/t3volabs" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="https://app.t3vo.com" target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Launch App
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6">
-        <div class="container mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent">
+    <section class="pt-32 pb-20 px-6 relative overflow-hidden">
+        <div class="container mx-auto text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Secure Your Digital Life
             </h1>
             <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto">
                 Password manager, bookmark manager, and private notes - all in one secure, offline-first application
             </p>
             <div class="flex gap-4 justify-center">
-                <a href="https://app.t3vo.com" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
-                    Launch App
+                <a href="https://app.t3vo.com" target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
+                    Get Started
                 </a>
-                <a href="https://github.com/t3volabs" target="_blank" rel="noopener noreferrer" class="bg-gray-700 text-white px-8 py-4 rounded-lg hover:bg-gray-600 transition-colors text-lg font-semibold border border-gray-600">
-                    View Source
+                <a href="#features" class="bg-gray-700 text-white px-8 py-4 rounded-lg hover:bg-gray-600 transition-colors text-lg font-semibold border border-gray-600">
+                    Learn More
                 </a>
             </div>
         </div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary opacity-10 rounded-full blur-3xl"></div>
     </section>
 
     <!-- Features Section -->
-    <section class="py-20 px-6">
+    <section id="features" class="py-20 px-6 bg-gray-800">
         <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Key Features</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Password Manager -->
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                <div class="bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                     <div class="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7a4 4 0 00-8 0v4h8z"></path>
@@ -71,9 +84,7 @@
                     <h3 class="text-xl font-semibold mb-2 text-white">Password Manager</h3>
                     <p class="text-gray-300">Securely store and manage all your passwords locally</p>
                 </div>
-
-                <!-- Bookmark Manager -->
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                <div class="bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                     <div class="w-12 h-12 bg-pink-900 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
@@ -82,9 +93,7 @@
                     <h3 class="text-xl font-semibold mb-2 text-white">Bookmark Manager</h3>
                     <p class="text-gray-300">Organize and access your favorite websites easily</p>
                 </div>
-
-                <!-- Private Notes -->
-                <div class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                <div class="bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
                     <div class="w-12 h-12 bg-purple-900 rounded-lg flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -97,41 +106,176 @@
         </div>
     </section>
 
-    <!-- Why t3vo Section -->
-    <section class="py-20 px-6 bg-gradient-to-r from-blue-900 to-pink-900 text-white">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-12">Why Choose t3vo?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div class="flex items-center space-x-2">
-                    <svg class="w-6 h-6 flex-shrink-0 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>No browser injector</span>
+    <!-- Security Section -->
+    <section id="security" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Uncompromising Security</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://via.placeholder.com/600x400.png?text=Security+Illustration" alt="Security Illustration" class="rounded-lg shadow-lg">
                 </div>
-                <div class="flex items-center space-x-2">
-                    <svg class="w-6 h-6 flex-shrink-0 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>No server required</span>
+                <div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>End-to-end encryption for all your data</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Zero-knowledge architecture - we can't access your data</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Offline-first approach for enhanced privacy</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Regular security audits and open-source codebase</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="flex items-center space-x-2">
-                    <svg class="w-6 h-6 flex-shrink-0 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    <span>Runs locally in browser</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-6 bg-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Simple, Transparent Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold mb-4">Free</h3>
+                    <p class="text-4xl font-bold mb-6">$0<span class="text-xl font-normal text-gray-400">/month</span></p>
+                    <ul class="mb-8 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Unlimited passwords</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Basic bookmark management</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Limited note-taking</span>
+                        </li>
+                    </ul>
+                    <a href="https://app.t3vo.com" class="block w-full bg-primary text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">Get Started</a>
+                </div>
+                <div class="bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border-2 border-primary relative">
+                    <div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 rounded-bl-lg rounded-tr-lg text-sm font-semibold">Popular</div>
+                    <h3 class="text-2xl font-bold mb-4">Pro</h3>
+                    <p class="text-4xl font-bold mb-6">$4.99<span class="text-xl font-normal text-gray-400">/month</span></p>
+                    <ul class="mb-8 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Everything in Free</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Advanced bookmark features</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Unlimited notes</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Priority support</span>
+                        </li>
+                    </ul>
+                    <a href="https://app.t3vo.com" class="block w-full bg-primary text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">Upgrade to Pro</a>
+                </div>
+                <div class="bg-gray-700 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+                    <p class="text-4xl font-bold mb-6">Custom</p>
+                    <ul class="mb-8 space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Everything in Pro</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Custom integrations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Dedicated support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>SLA guarantees</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block w-full bg-primary text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-8 max-w-3xl mx-auto">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Is my data really secure?</h3>
+                    <p class="text-gray-300">Yes, t3vo uses end-to-end encryption and a zero-knowledge architecture. We never have access to your unencrypted data.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Can I use t3vo on multiple devices?</h3>
+                    <p class="text-gray-300">t3vo supports seamless syncing across all your devices while maintaining top-notch security.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">What happens if I forget my master password?</h3>
+                    <p class="text-gray-300">For security reasons, we cannot recover your master password. However, we provide options for secure password recovery using encryption keys.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Is t3vo open-source?</h3>
+                    <p class="text-gray-300">Yes, t3vo is fully open-source. You can review our code on GitHub and even contribute to the project.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 px-6">
+    <section class="py-20 px-6 bg-gradient-to-r from-primary to-secondary">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8 text-white">Start Securing Your Data Today</h2>
-            <p class="text-xl mb-12 max-w-2xl mx-auto text-gray-300">
+            <h2 class="text-4xl font-bold mb-8 text-white">Start Securing Your Digital Life Today</h2>
+            <p class="text-xl mb-12 max-w-2xl mx-auto text-white">
                 Join thousands of users who trust t3vo for their password management and note-taking needs
             </p>
-            <a href="https://app.t3vo.com" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold inline-block">
+            <a href="https://app.t3vo.com" target="_blank" rel="noopener noreferrer" class="bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors text-lg font-semibold inline-block">
                 Get Started Now
             </a>
         </div>
@@ -139,16 +283,40 @@
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 t3vo. All rights reserved.</p>
-            <p class="mt-2 text-gray-400">Open-source and built with privacy in mind.</p>
-            <div class="mt-6 flex justify-center gap-6">
-                <a href="https://github.com/t3volabs" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                    GitHub
-                </a>
-                <a href="https://app.t3vo.com" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
-                    App
-                </a>
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">t3vo</h3>
+                    <p class="text-gray-400">Secure your digital life with our all-in-one solution.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#security" class="text-gray-400 hover:text-white transition-colors">Security</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a></li>
+                        <li><a href="https://github.com/t3volabs" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2024 t3vo. All rights reserved.</p>
+                <p class="mt-2 text-gray-400">Open-source and built with privacy in mind.</p>
             </div>
         </div>
     </footer>
