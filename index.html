@@ -4,34 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
- 
-<title>T3VO - Secure Password Manager & Note Taking App</title>
-<meta name="title" content="T3VO - Secure Password Manager & Note Taking App" />
-<meta name="description" content="Password manager, bookmark manager, and private notes - all in one secure, offline-first application." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://t3vo.com/" />
-<meta property="og:title" content="T3VO - Secure Password Manager & Note Taking App" />
-<meta property="og:description" content="Password manager, bookmark manager, and private notes - all in one secure, offline-first application." />
-<meta property="og:image" content="/banner.png" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://t3vo.com/" />
-<meta property="twitter:title" content="T3VO - Secure Password Manager & Note Taking App" />
-<meta property="twitter:description" content="Password manager, bookmark manager, and private notes - all in one secure, offline-first application." />
-<meta property="twitter:image" content="/banner.png" />
-
-     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap">
+    <title>T3VO - Secure Password Manager & Note Taking App</title>
+    <meta name="title" content="T3VO - Secure Password Manager & Note Taking App" />
+    <meta name="description" content="Password manager, bookmark manager, and private notes - all in one secure, offline-first application." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://t3vo.com/" />
+    <meta property="og:title" content="T3VO - Secure Password Manager & Note Taking App" />
+    <meta property="og:description" content="Password manager, bookmark manager, and private notes - all in one secure, offline-first application." />
+    <meta property="og:image" content="/banner.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://t3vo.com/" />
+    <meta property="twitter:title" content="T3VO - Secure Password Manager & Note Taking App" />
+    <meta property="twitter:description" content="Password manager, bookmark manager, and private notes - all in one secure, offline-first application." />
+    <meta property="twitter:image" content="/banner.png" />
+    <style>
+        body, html {
+            font-family: 'Courier Prime', monospace;
+            background-color: #000;
+            color: #00ff00;
+            line-height: 1.6;
+            overflow: hidden;
+        }
+        .glitch {
+            position: relative;
+        }
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #00fff9;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(17px, 9999px, 94px, 0); }
+            25% { clip: rect(40px, 9999px, 53px, 0); }
+            50% { clip: rect(45px, 9999px, 46px, 0); }
+            75% { clip: rect(61px, 9999px, 75px, 0); }
+            100% { clip: rect(67px, 9999px, 19px, 0); }
+        }
+        .text-glow {
+            text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+        }
+        .link {
+            color: #00ff00;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        }
+        .cursor::after {
+            content: '|';
+            animation: cursor 1s infinite step-start;
+        }
+        @keyframes cursor {
+            50% { opacity: 0; }
+        }
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
 </head>
-<body class="flex min-h-screen items-center justify-center bg-black font-sans text-yellow-100">
-  <section class="p-6 text-center">
-    <div class="mx-auto max-w-xl">
-      <h1 class="mb-12 text-2xl font-bold tracking-widest hover:text-white lg:text-6xl">T 3 V O</h1>
-      <p class="mb-10 font-mono text-lg tracking-wide lg:text-xl">A secure, encrypted, offline-first app for managing passwords, bookmarks, and notes. Sync your data trustlessly across devices with no installation required. Built with pure JavaScript, it’s fast, free, and feature-rich—store unlimited data with no paywalls or subscriptions.</p>
-      <div class="flex justify-center gap-6 font-mono text-2xl uppercase">
-        <a href="https://app.t3vo.com" class="text-purple-400 transition hover:text-purple-300">APP</a>
-        <a href="https://github.com/t3volabs" class="text-blue-400 transition hover:text-blue-300">GITHUB</a>
-      </div>
+<body class="flex min-h-screen items-center justify-center bg-black text-green-400 p-4">
+    <canvas id="matrix-bg"></canvas>
+    <div class="max-w-4xl mx-auto text-center z-10">
+        <h1 class="mb-12 text-7xl font-bold tracking-widest text-glow glitch cursor" data-text="T3VO">T3VO</h1>
+        <p class="mb-10 text-2xl tracking-wide leading-relaxed">
+            Secure. Encrypted. Offline-first.<br>
+            Password manager. Bookmark manager. Private notes.<br>
+            No installation. No paywalls. No compromises.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6 text-3xl uppercase mt-12">
+            <a href="https://app.t3vo.com" class="link mb-4 sm:mb-0">APP</a>
+            <a href="https://github.com/t3volabs" class="link">GITHUB</a>
+        </div>
     </div>
-  </section>
+
+    <script>
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const characters = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0f0';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
 </body>
 </html>
+
