@@ -1,8 +1,9 @@
 <template>
-    <section id="community" class="py-24 relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 transform rotate-1"></div>
-      <div class="relative bg-gradient-to-r from-gray-900 to-gray-800 text-white p-12 -rotate-1">
-        <div class="max-w-4xl mx-auto text-center">
+    <section id="community" class="py-24 bg-gradient-to-r from-gray-900 to-gray-800 text-white p-12">
+
+
+
+      <div class="max-w-4xl mx-auto text-center">
           <div class="inline-block bg-gray-800/50 rounded-full px-4 py-1 text-sm font-medium mb-8">Open Source 💝</div>
           <h2 class="text-4xl font-bold mb-6">Join the t3vo Community</h2>
           <p class="text-gray-300 text-lg mb-12 max-w-2xl mx-auto">t3vo is built by developers for developers. We believe in the power of community-driven development. Fork our repo, add your features, and help us make t3vo even better!</p>
@@ -33,7 +34,6 @@
             </a>
           </div>
         </div>
-      </div>
     </section>
   </template>
   
