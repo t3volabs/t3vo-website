@@ -2,7 +2,6 @@
   <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
     <main>
       <HeroSection />
-      <FeaturesGrid />
       <DataFlowDiagram />
       <FeatureComparison />
       <OpenSourceSection />
@@ -19,7 +18,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import HeroSection from "./components/HeroSection.vue";
-import FeaturesGrid from "./components/FeaturesGrid.vue";
 import DataFlowDiagram from "./components/DataFlowDiagram.vue";
 import FeatureComparison from "./components/FeaturesC.vue";
 import OpenSourceSection from "./components/OpenS.vue";
