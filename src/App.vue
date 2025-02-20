@@ -5,7 +5,6 @@
       <DataFlowDiagram />
       <FeatureComparison />
       <OpenSourceSection />
-      <teamSection /> 
     </main>
 
     <footer class="bg-gray-100 py-8">
@@ -22,7 +21,6 @@ import HeroSection from "./components/HeroSection.vue";
 import DataFlowDiagram from "./components/DataFlowDiagram.vue";
 import FeatureComparison from "./components/FeaturesC.vue";
 import OpenSourceSection from "./components/OpenS.vue";
-import teamSection from "./components/team.vue";
 
 const currentYear = ref(new Date().getFullYear());
 </script>
