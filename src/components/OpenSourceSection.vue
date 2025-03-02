@@ -35,14 +35,14 @@
 
       <div class="buttons-wrapper fade-in-up" style="--delay: 0.7s">
         <a 
-          href="https://github.com/t3volabs" 
+          href="https://github.com/t3volabs/t3vo-app" 
           class="primary-button"
         >
           <GithubIcon class="button-icon" />
           Fork on GitHub
         </a>
         <a 
-          href="https://github.com/t3volabs/app/issues" 
+          href="https://github.com/t3volabs/t3vo-app/issues" 
           class="secondary-button"
         >
           View Issues
