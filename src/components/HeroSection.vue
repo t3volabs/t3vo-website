@@ -1,6 +1,6 @@
 <template>
-  <section class="py-24 text-center max-w-5xl mx-auto px-6">
-    <div class="inline-block bg-blue-50 text-blue-600 rounded-full px-4 py-1 text-sm font-medium mb-8 animate-pulse">Open Source ✨</div>
+  <section class="py-24 text-center mx-auto px-6">
+    <div class="inline-block bg-blue-50 text-blue-600 rounded-full px-4 py-1 text-sm font-medium mb-8">Open Source ✨</div>
     <h1 class="text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">T 3 V O</h1>
     <p class="text-xl text-gray-600 mb-12 leading-relaxed">
       Password manager. Bookmark organizer. Private notes.<br />
@@ -14,23 +14,3 @@
     </a>
   </section>
 </template>
-
-<script setup>
-// No props or data needed for this component
-</script>
-
-<style scoped>
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-</style>
