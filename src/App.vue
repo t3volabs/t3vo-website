@@ -2,8 +2,7 @@
   <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white">
     <main>
       <HeroSection />
-      <DataFlowDiagram />
-      <FeatureComparison />
+       <FeatureComparison />
       <OpenSourceSection />
     </main>
 
@@ -18,8 +17,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import HeroSection from "./components/HeroSection.vue";
-import DataFlowDiagram from "./components/DataFlowDiagram.vue";
-import FeatureComparison from "./components/FeaturesC.vue";
+ import FeatureComparison from "./components/FeaturesC.vue";
 import OpenSourceSection from "./components/OpenS.vue";
 
 const currentYear = ref(new Date().getFullYear());
