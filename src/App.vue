@@ -1,17 +1,15 @@
 <template>
   <div class="min-h-screen">
-    <main>
-      <HeroSection />
+    <HeroSection />
 
-      <FeaturesSection />
+    <FeaturesSection />
 
-      <FeatureComparison />
+    <FeatureComparison />
 
-      <OpenSourceSection />
-    </main>
+    <OpenSourceSection />
 
     <footer class="py-8">
-      <div class="container mx-auto px-6 text-center text-gray-600">
+      <div class="container mx-auto px-6 text-center text-gray-800 font-bold">
         <p>&copy; {{ currentYear }} T3VO. All rights reserved.</p>
       </div>
     </footer>
