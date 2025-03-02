@@ -1,33 +1,52 @@
 <template>
-  <section id="community" class="py-24 bg-gradient-to-r from-gray-900 to-gray-600 text-white p-12">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="inline-block bg-gray-800/50 rounded-full px-4 py-1 text-sm font-medium mb-8">Open Source 💝</div>
-      <h2 class="text-4xl font-bold mb-6">Join the T3VO Community</h2>
-      <p class="text-gray-300 text-lg mb-12 max-w-2xl mx-auto">T3VO is built by developers for developers. We believe in the power of community-driven development. Fork our repo, add your features, and help us make t3vo even better!</p>
+  <section class="community-section">
+    <div class="content-wrapper">
+      <span 
+        class="pill-badge fade-in-up"
+      >
+        Open Source
+        <HeartIcon class="heart-icon" />
+      </span>
 
-      <div class="grid md:grid-cols-3 gap-8 mb-12">
-        <div v-for="feature in communityFeatures" :key="feature.title" class="bg-gray-800/50 rounded-2xl p-6">
-          <span class="text-3xl mb-4 block">{{ feature.emoji }}</span>
-          <h3 class="font-medium mb-2">{{ feature.title }}</h3>
-          <p class="text-gray-400 text-sm">{{ feature.description }}</p>
+      <h2 class="section-title fade-in-up" style="--delay: 0.2s">
+        Join the T3VO Community
+      </h2>
+
+      <p class="section-description fade-in-up" style="--delay: 0.3s">
+        T3VO is built by developers for developers. We believe in the power of 
+        community-driven development. Fork our repo, add your features, and help 
+        us make T3VO even better!
+      </p>
+
+      <div class="features-grid">
+        <div 
+          v-for="(feature, index) in communityFeatures" 
+          :key="feature.title"
+          class="feature-card fade-in-up"
+          :style="{ '--delay': `${0.4 + index * 0.1}s` }"
+        >
+          <div class="icon-wrapper">
+            <component :is="feature.icon" class="feature-icon" />
+          </div>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
         </div>
       </div>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://github.com/t3volabs" class="inline-flex items-center gap-2 bg-white text-gray-900 font-medium py-3 px-6 rounded-full hover:bg-gray-100 transition transform hover:scale-105">
-          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
-            <path
-              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-            />
-          </svg>
+      <div class="buttons-wrapper fade-in-up" style="--delay: 0.7s">
+        <a 
+          href="https://github.com/t3volabs" 
+          class="primary-button"
+        >
+          <GithubIcon class="button-icon" />
           Fork on GitHub
         </a>
-        <a href="https://github.com/t3volabs/app/issues" class="inline-flex items-center gap-2 bg-gray-800 text-white font-medium py-3 px-6 rounded-full hover:bg-gray-700 transition transform hover:scale-105">
+        <a 
+          href="https://github.com/t3volabs/app/issues" 
+          class="secondary-button"
+        >
           View Issues
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+          <ArrowRightIcon class="button-icon" />
         </a>
       </div>
     </div>
@@ -35,9 +54,228 @@
 </template>
 
 <script setup>
+import { 
+  Github as GithubIcon,
+  Heart as HeartIcon,
+  ArrowRight as ArrowRightIcon,
+  Hammer as HammerIcon,
+  Users as UsersIcon,
+  Rocket as RocketIcon
+} from 'lucide-vue-next'
+
 const communityFeatures = [
-  { emoji: "🔨", title: "Build Features", description: "Add new integrations, enhance security, or improve the UI" },
-  { emoji: "🤝", title: "Collaborate", description: "Join discussions, share ideas, and help other developers" },
-  { emoji: "🚀", title: "Deploy", description: "Host your own instance with your custom features" },
+  { 
+    icon: HammerIcon,
+    title: "Build Features", 
+    description: "Add new integrations, enhance security, or improve the UI" 
+  },
+  { 
+    icon: UsersIcon,
+    title: "Collaborate", 
+    description: "Join discussions, share ideas, and help other developers" 
+  },
+  { 
+    icon: RocketIcon,
+    title: "Deploy", 
+    description: "Host your own instance with your custom features" 
+  },
 ];
 </script>
+
+<style scoped>
+.community-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000, #1D1D1F);
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.heart-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  color: #FF6B6B;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.section-description {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 36rem;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.feature-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.buttons-wrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.primary-button, .secondary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.primary-button {
+  background-color: white;
+  color: #000000;
+}
+
+.primary-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.secondary-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Animation classes */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: var(--delay, 0.1s);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .buttons-wrapper {
+    flex-direction: row;
+  }
+  
+  .section-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .feature-card:hover {
+    transform: none;
+  }
+}
+</style>
