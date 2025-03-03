@@ -1,25 +1,18 @@
 <template>
   <section class="hero-landing">
     <div class="hero-content">
-      <span class="pill-badge fade-in-up">
-        Open Source <span class="sparkle">✨</span>
-      </span>
-      
-      <h1 class="hero-title fade-in-up" style="--delay: 0.2s">
-        T3VO
-      </h1>
-      
+      <span class="pill-badge fade-in-up"> Open Source <span class="sparkle">✨</span> </span>
+
+      <h1 class="hero-title fade-in-up" style="--delay: 0.2s">T3VO</h1>
+
       <p class="hero-description fade-in-up" style="--delay: 0.3s">
-Your Offline Vault for Passwords, Bookmarks & Private Notes.<br class="hide-mobile" />
+        Your Offline Vault for Passwords, Bookmarks & Private Notes.<br class="hide-mobile" />
         All encrypted. All offline-capable. Zero compromises.
       </p>
-      
+
       <div class="fade-in-up" style="--delay: 0.4s">
-        <a 
-          href="https://app.t3vo.com" 
-          class="cta-button"
-        >
-          Get Started – It's Free
+        <a href="https://app.t3vo.com" class="cta-button">
+          APP
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
             <path d="M5 12h14m-7-7 7 7-7 7" />
           </svg>
@@ -138,11 +131,11 @@ Your Offline Vault for Passwords, Bookmarks & Private Notes.<br class="hide-mobi
   .hero-title {
     font-size: 6rem;
   }
-  
+
   .hero-description {
     font-size: 1.75rem;
   }
-  
+
   .hide-mobile {
     display: inline;
   }
