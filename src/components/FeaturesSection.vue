@@ -1,18 +1,23 @@
 <template>
-  <section class="features-section">
-    <div class="features-container">
-      <h2 class="section-title fade-in-up">
+  <section class="min-h-screen bg-gradient-to-br from-black to-gray-900 flex items-center py-16 px-4 md:px-8 font-sans text-white antialiased">
+    <div class="max-w-7xl mx-auto w-full">
+      <h2 class="text-center text-2xl md:text-3xl lg:text-4xl font-semibold mb-16 tracking-tight leading-tight animate-fade-in-up">
         Everything you need
-        <span class="text-[#86868B]">for digital security</span>
+        <span class="text-gray-400">for digital security</span>
       </h2>
 
-      <div class="features-grid">
-        <div v-for="(feature, index) in features" :key="feature.title" class="feature-card fade-in-up" :style="{ '--delay': `${0.2 + index * 0.1}s` }">
-          <div class="icon-wrapper">
-            <component :is="feature.icon" class="feature-icon" />
+      <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div 
+          v-for="(feature, index) in features" 
+          :key="feature.title" 
+          class="bg-white/5 backdrop-blur-lg rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:bg-white/8 border border-white/10 hover:border-white/20 animate-fade-in-up"
+          :style="{ 'animation-delay': `${0.2 + index * 0.1}s` }"
+        >
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-2xl mb-6">
+            <component :is="feature.icon" class="w-6 h-6 text-white" />
           </div>
-          <h3 class="feature-title">{{ feature.title }}</h3>
-          <p class="feature-description">{{ feature.description }}</p>
+          <h3 class="text-xl font-semibold text-white mb-3 tracking-tight">{{ feature.title }}</h3>
+          <p class="text-white/70 leading-relaxed">{{ feature.description }}</p>
         </div>
       </div>
     </div>
@@ -33,7 +38,6 @@ const features = [
     title: "Unlmitied Storage & Profiles",
     description: "Create and manage multiple profiles for different use cases, unlimited storage for all.",
   },
-
   {
     icon: Wifi,
     title: "Works Offline",
@@ -59,7 +63,6 @@ const features = [
     title: "Private Notes",
     description: "Securely store and sync your thoughts, ideas, and important information.",
   },
-
   {
     icon: Pyramid,
     title: "Client First Design",
@@ -68,95 +71,10 @@ const features = [
 ];
 </script>
 
-<style scoped>
-.features-section {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #000000, #1d1d1f);
-  display: flex;
-  align-items: center;
-  padding: 4rem 2rem;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: white;
-}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-.features-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 4rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.features-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.feature-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 1.5rem;
-  padding: 2rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.icon-wrapper {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.feature-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: white;
-}
-
-.feature-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
-}
-
-.feature-description {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* Animation classes */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: var(--delay, 0.1s);
-}
-
+/* Custom animation classes that aren't available in default Tailwind */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -168,33 +86,27 @@ const features = [
   }
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-  .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .section-title {
-    font-size: 3rem;
-  }
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-@media (min-width: 1024px) {
-  .features-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Reduce motion if user prefers */
+/* Respect user preferences for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in-up {
+  .animate-fade-in-up {
     animation: none;
     opacity: 1;
     transform: translateY(0);
   }
-
-  .feature-card:hover {
+  
+  .hover\:-translate-y-1:hover {
     transform: none;
   }
+}
+
+/* Set font family to Inter */
+.font-sans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 </style>
