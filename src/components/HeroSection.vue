@@ -7,7 +7,7 @@
 
       <p class="hero-description fade-in-up" style="--delay: 0.3s">
         Your Offline Vault for Passwords, Bookmarks & Private Notes.<br class="hide-mobile" />
-        All encrypted. All offline-capable. Zero compromises.
+        All encrypted. Offline first. Works Everywhere. No Server Needed.
       </p>
 
       <div class="fade-in-up" style="--delay: 0.4s">
