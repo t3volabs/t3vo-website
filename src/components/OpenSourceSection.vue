@@ -39,7 +39,7 @@
           class="primary-button"
         >
           <GithubIcon class="button-icon" />
-          Fork on GitHub
+        GitHub
         </a>
         <a 
           href="https://github.com/t3volabs/t3vo-app/issues" 
