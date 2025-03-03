@@ -1,52 +1,65 @@
 <template>
-  <section class="community-section">
-    <div class="content-wrapper">
+  <section class="min-h-screen bg-gradient-to-br from-black to-gray-900 flex items-center py-16 px-4 md:px-8 font-sans text-white antialiased">
+    <div class="max-w-5xl mx-auto w-full text-center">
+      <!-- Badge -->
       <span 
-        class="pill-badge fade-in-up"
+        class="inline-flex items-center bg-white/10 backdrop-blur-lg rounded-full px-5 py-2 text-sm font-medium mb-8 animate-fade-in-up"
       >
         Open Source
-        <HeartIcon class="heart-icon" />
+        <HeartIcon class="w-4 h-4 ml-2 text-red-400" />
       </span>
 
-      <h2 class="section-title fade-in-up" style="--delay: 0.2s">
+      <!-- Title & Description -->
+      <h2 
+        class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 tracking-tight leading-tight animate-fade-in-up"
+        style="animation-delay: 200ms;"
+      >
         Join the T3VO Community
       </h2>
 
-      <p class="section-description fade-in-up" style="--delay: 0.3s">
+      <p 
+        class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in-up"
+        style="animation-delay: 300ms;"
+      >
         T3VO is built by developers for developers. We believe in the power of 
         community-driven development. Fork our repo, add your features, and help 
         us make T3VO even better!
       </p>
 
-      <div class="features-grid">
+      <!-- Features Grid -->
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-12">
         <div 
           v-for="(feature, index) in communityFeatures" 
           :key="feature.title"
-          class="feature-card fade-in-up"
-          :style="{ '--delay': `${0.4 + index * 0.1}s` }"
+          class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 transition-all duration-300 hover:-translate-y-1 hover:bg-white/15 animate-fade-in-up"
+          :style="{ 'animation-delay': `${0.4 + index * 0.1}s` }"
         >
-          <div class="icon-wrapper">
-            <component :is="feature.icon" class="feature-icon" />
+          <div class="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-2xl mb-6">
+            <component :is="feature.icon" class="w-6 h-6" />
           </div>
-          <h3 class="feature-title">{{ feature.title }}</h3>
-          <p class="feature-description">{{ feature.description }}</p>
+          <h3 class="text-xl font-semibold mb-3">{{ feature.title }}</h3>
+          <p class="text-white/80 text-sm leading-relaxed">{{ feature.description }}</p>
         </div>
       </div>
 
-      <div class="buttons-wrapper fade-in-up" style="--delay: 0.7s">
+      <!-- Buttons -->
+      <div 
+        class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up"
+        style="animation-delay: 700ms;"
+      >
         <a 
           href="https://github.com/t3volabs/t3vo-app" 
-          class="primary-button"
+          class="inline-flex items-center justify-center gap-2 bg-white text-black min-w-[200px] px-6 py-3.5 rounded-full font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/90"
         >
-          <GithubIcon class="button-icon" />
-        GitHub
+          <GithubIcon class="w-5 h-5" />
+          GitHub
         </a>
         <a 
           href="https://github.com/t3volabs/t3vo-app/issues" 
-          class="secondary-button"
+          class="inline-flex items-center justify-center gap-2 bg-white/10 text-white min-w-[200px] px-6 py-3.5 rounded-full font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/15"
         >
           View Issues
-          <ArrowRightIcon class="button-icon" />
+          <ArrowRightIcon class="w-5 h-5" />
         </a>
       </div>
     </div>
@@ -82,162 +95,10 @@ const communityFeatures = [
 ];
 </script>
 
-<style scoped>
-.community-section {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #000000, #1D1D1F);
-  display: flex;
-  align-items: center;
-  padding: 4rem 2rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: white;
-}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-.content-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
-}
-
-.pill-badge {
-  display: inline-flex;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 9999px;
-  padding: 0.5rem 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
-}
-
-.heart-icon {
-  width: 1rem;
-  height: 1rem;
-  margin-left: 0.5rem;
-  color: #FF6B6B;
-}
-
-.section-title {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.section-description {
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 36rem;
-  margin: 0 auto 3rem;
-  line-height: 1.6;
-}
-
-.features-grid {
-  display: grid;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.feature-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 1.25rem;
-  padding: 2rem;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-4px);
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.icon-wrapper {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.feature-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.feature-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.feature-description {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.buttons-wrapper {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-.button-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.primary-button, .secondary-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  min-width: 200px;
-  justify-content: center;
-}
-
-.primary-button {
-  background-color: white;
-  color: #000000;
-}
-
-.primary-button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  transform: translateY(-2px);
-}
-
-.secondary-button {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-.secondary-button:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-}
-
-/* Animation classes */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: var(--delay, 0.1s);
-}
-
+/* Custom animation classes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -249,33 +110,28 @@ const communityFeatures = [
   }
 }
 
-/* Responsive Design */
-@media (min-width: 640px) {
-  .buttons-wrapper {
-    flex-direction: row;
-  }
-  
-  .section-title {
-    font-size: 3.5rem;
-  }
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-@media (min-width: 768px) {
-  .features-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Reduce motion if user prefers */
+/* Respect user preferences for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in-up {
+  .animate-fade-in-up {
     animation: none;
     opacity: 1;
     transform: translateY(0);
   }
   
-  .feature-card:hover {
+  .hover\:-translate-y-1:hover,
+  .hover\:-translate-y-0\.5:hover {
     transform: none;
   }
+}
+
+/* Set font family */
+.font-sans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 </style>
