@@ -1,38 +1,44 @@
 <template>
-  <section class="comparison-section">
-    <div class="content-wrapper">
-      <h2 class="section-title fade-in-up">
+  <section class="min-h-screen bg-white flex items-center py-16 px-4 md:px-8 font-sans antialiased">
+    <div class="max-w-7xl mx-auto w-full">
+      <!-- Title -->
+      <h2 class="text-center text-2xl md:text-4xl font-semibold text-gray-900 mb-12 tracking-tight leading-tight flex flex-col gap-2 animate-fade-in-up">
         Feature Comparison
-        <span class="text-[#86868B]">See how we stack up</span>
+        <span class="text-gray-400">See how we stack up</span>
       </h2>
 
-      <div class="table-container fade-in-up" style="--delay: 0.2s">
-        <table class="comparison-table">
+      <!-- Table Container -->
+      <div 
+        class="bg-gradient-to-b from-gray-50 to-white rounded-3xl p-6 md:p-8 shadow-lg overflow-x-auto animate-fade-in-up"
+        style="animation-delay: 200ms;"
+      >
+        <table class="w-full border-separate border-spacing-0 min-w-[800px]">
           <thead>
             <tr>
-              <th class="feature-header">Features</th>
+              <th class="text-left p-6 font-medium text-gray-900 min-w-[200px]">Features</th>
               <th 
                 v-for="app in apps" 
                 :key="app.name" 
-                class="app-header"
+                class="p-6 text-center min-w-[120px]"
               >
-                <div class="app-header-content">
-                  <div class="icon-wrapper">
-                    <component :is="app.icon" class="app-icon" />
+                <div class="flex flex-col items-center gap-2 relative">
+                  <div class="inline-flex items-center justify-center w-10 h-10 bg-gray-50 rounded-xl">
+                    <component :is="app.icon" class="w-5 h-5 text-gray-900" />
                   </div>
-                  <span class="app-name">{{ app.name }}</span>
+                  <span class="font-medium text-gray-900">{{ app.name }}</span>
                   <span 
                     v-if="app.note" 
-                    class="app-note"
+                    class="text-sm text-blue-600 cursor-help"
                     @mouseenter="showTooltip = app.name"
                     @mouseleave="showTooltip = null"
                   >
                     {{ app.note }}
                     <div 
                       v-if="showTooltip === app.name"
-                      class="tooltip"
+                      class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-gray-900 text-white px-4 py-3 rounded-xl text-sm whitespace-nowrap z-10 shadow-lg"
                     >
                       That's our app! We've built it with all the essential features you need.
+                      <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-gray-900"></div>
                     </div>
                   </span>
                 </div>
@@ -43,26 +49,26 @@
             <tr 
               v-for="feature in features" 
               :key="feature.feature" 
-              class="feature-row"
+              class="border-t border-gray-100"
             >
-              <td class="feature-cell">
-                <component :is="feature.icon" class="feature-icon" />
+              <td class="p-4 md:p-6 flex items-center gap-3 text-gray-900">
+                <component :is="feature.icon" class="w-5 h-5 text-gray-400" />
                 <span>{{ feature.feature }}</span>
               </td>
               <td 
                 v-for="(supported, index) in feature.apps" 
                 :key="index" 
-                class="status-cell"
+                class="p-4 text-center"
               >
                 <div 
                   :class="[
-                    'status-indicator',
-                    supported ? 'status-yes' : 'status-no'
+                    'inline-flex items-center justify-center w-8 h-8 rounded-lg',
+                    supported ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
                   ]"
                 >
                   <component 
                     :is="supported ? CheckIcon : XIcon"
-                    class="status-icon"
+                    class="w-4 h-4"
                   />
                 </div>
               </td>
@@ -120,183 +126,10 @@ const features = [
 ];
 </script>
 
-<style scoped>
-.comparison-section {
-  min-height: 100vh;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  padding: 4rem 1rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-.content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #1D1D1F;
-  margin-bottom: 3rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.table-container {
-  background: linear-gradient(to bottom, #F5F5F7, white);
-  border-radius: 1.5rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
-  overflow-x: auto;
-}
-
-.comparison-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  min-width: 800px;
-}
-
-.feature-header {
-  text-align: left;
-  padding: 1.5rem;
-  font-weight: 500;
-  color: #1D1D1F;
-  min-width: 200px;
-}
-
-.app-header {
-  padding: 1.5rem;
-  text-align: center;
-  min-width: 120px;
-}
-
-.app-header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  position: relative;
-}
-
-.icon-wrapper {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: #F5F5F7;
-  border-radius: 0.75rem;
-}
-
-.app-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: #1D1D1F;
-}
-
-.app-name {
-  font-weight: 500;
-  color: #1D1D1F;
-}
-
-.app-note {
-  font-size: 0.875rem;
-  color: #0066CC;
-  cursor: help;
-  position: relative;
-}
-
-.tooltip {
-  position: absolute;
-  bottom: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #1D1D1F;
-  color: white;
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
-  font-size: 0.875rem;
-  white-space: nowrap;
-  z-index: 10;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: #1D1D1F transparent transparent transparent;
-}
-
-.feature-row {
-  border-top: 1px solid #F5F5F7;
-}
-
-.feature-cell {
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: #1D1D1F;
-}
-
-.feature-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: #86868B;
-}
-
-.status-cell {
-  padding: 1rem;
-  text-align: center;
-}
-
-.status-indicator {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-}
-
-.status-yes {
-  background-color: #E8F5E9;
-  color: #2E7D32;
-}
-
-.status-no {
-  background-color: #FFEBEE;
-  color: #C62828;
-}
-
-.status-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-/* Animation classes */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
-  animation-delay: var(--delay, 0.1s);
-}
-
+/* Custom animation classes */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -308,27 +141,23 @@ const features = [
   }
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-  .comparison-section {
-    padding: 4rem 2rem;
-  }
-  
-  .section-title {
-    font-size: 3rem;
-  }
-  
-  .table-container {
-    padding: 2rem;
-  }
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Reduce motion if user prefers */
+/* Respect user preferences for reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .fade-in-up {
+  .animate-fade-in-up {
     animation: none;
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Set font family */
+.font-sans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 </style>
