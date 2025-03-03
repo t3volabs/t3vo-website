@@ -10,8 +10,7 @@
       </h1>
       
       <p class="hero-description fade-in-up" style="--delay: 0.3s">
-        Password manager. Bookmark organizer. Private notes.
-        <br class="hide-mobile" />
+Your Offline Vault for Passwords, Bookmarks & Private Notes.<br class="hide-mobile" />
         All encrypted. All offline-capable. Zero compromises.
       </p>
       
