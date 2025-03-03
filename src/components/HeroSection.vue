@@ -6,7 +6,7 @@
       <h1 class="hero-title fade-in-up" style="--delay: 0.2s">T3VO</h1>
 
       <p class="hero-description fade-in-up" style="--delay: 0.3s">
-        Your Offline Vault for Passwords, Bookmarks & Private Notes.<br class="hide-mobile" />
+        Offline Vault for Passwords, Bookmarks & Private Notes.<br class="hide-mobile" />
         All encrypted. Offline first. Works Everywhere. No Server Needed.
       </p>
 
