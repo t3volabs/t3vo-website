@@ -7,12 +7,7 @@
       </h2>
 
       <div class="features-grid">
-        <div 
-          v-for="(feature, index) in features" 
-          :key="feature.title" 
-          class="feature-card fade-in-up"
-          :style="{ '--delay': `${0.2 + index * 0.1}s` }"
-        >
+        <div v-for="(feature, index) in features" :key="feature.title" class="feature-card fade-in-up" :style="{ '--delay': `${0.2 + index * 0.1}s` }">
           <div class="icon-wrapper">
             <component :is="feature.icon" class="feature-icon" />
           </div>
@@ -25,45 +20,50 @@
 </template>
 
 <script setup>
-import { 
-  Lock, 
-  Wifi, 
-  Rocket, 
-  Bookmark, 
-  Key, 
-  FileText 
-} from 'lucide-vue-next'
+import { Lock, Wifi, Rocket, Bookmark, Key, FileText, UserRoundPen, Pyramid } from "lucide-vue-next";
 
 const features = [
-  { 
-    icon: Lock, 
-    title: "End-to-End Encrypted", 
-    description: "Your data never leaves your device unencrypted, ensuring maximum privacy and security at all times." 
+  {
+    icon: Lock,
+    title: "End-to-End Encrypted",
+    description: "Your data never leaves your device unencrypted, ensuring maximum privacy and security at all times.",
   },
-  { 
-    icon: Wifi, 
-    title: "Works Offline", 
-    description: "Enjoy full functionality without an internet connection, perfect for productivity on-the-go." 
+  {
+    icon: UserRoundPen,
+    title: "Unlmitied Storage & Profiles",
+    description: "Create and manage multiple profiles for different use cases, unlimited storage for all.",
   },
-  { 
-    icon: Rocket, 
-    title: "Zero Install", 
-    description: "Use instantly in any modern browser, no downloads or installations required." 
+
+  {
+    icon: Wifi,
+    title: "Works Offline",
+    description: "Enjoy full functionality without an internet connection, perfect for productivity on-the-go.",
   },
-  { 
-    icon: Bookmark, 
-    title: "Smart Bookmarks", 
-    description: "Organize and access your web efficiently with our intelligent bookmarking system." 
+  {
+    icon: Rocket,
+    title: "Zero Install",
+    description: "Use instantly in any modern browser, no downloads or installations required.",
   },
-  { 
-    icon: Key, 
-    title: "Password Manager", 
-    description: "Keep your credentials secure and easily accessible across all your devices." 
+  {
+    icon: Bookmark,
+    title: "Smart Bookmarks",
+    description: "Organize and access your web efficiently with our intelligent bookmarking system.",
   },
-  { 
-    icon: FileText, 
-    title: "Private Notes", 
-    description: "Securely store and sync your thoughts, ideas, and important information." 
+  {
+    icon: Key,
+    title: "Password Manager",
+    description: "Keep your credentials secure and easily accessible across all your devices.",
+  },
+  {
+    icon: FileText,
+    title: "Private Notes",
+    description: "Securely store and sync your thoughts, ideas, and important information.",
+  },
+
+  {
+    icon: Pyramid,
+    title: "Client First Design",
+    description: "No server required, all data is stored on your device and encrypted with your keys.",
   },
 ];
 </script>
@@ -71,11 +71,11 @@ const features = [
 <style scoped>
 .features-section {
   min-height: 100vh;
-  background: linear-gradient(135deg, #000000, #1D1D1F);
+  background: linear-gradient(135deg, #000000, #1d1d1f);
   display: flex;
   align-items: center;
   padding: 4rem 2rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: white;
@@ -173,7 +173,7 @@ const features = [
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .section-title {
     font-size: 3rem;
   }
@@ -192,7 +192,7 @@ const features = [
     opacity: 1;
     transform: translateY(0);
   }
-  
+
   .feature-card:hover {
     transform: none;
   }
