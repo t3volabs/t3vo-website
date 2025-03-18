@@ -50,7 +50,7 @@
           </a>
           
           <a 
-            href="https://vercel.com/new/clone?repository-url=https://github.com/t3volabs/t3vo-app/tree/stable" 
+            href="https://vercel.com/new/clone?repository-url=https://github.com/t3volabs/t3vo-app/tree/latest" 
             class="inline-flex items-center bg-gray-900 text-white font-medium px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-gray-800 hover:-translate-y-0.5"
           >
             Deploy
