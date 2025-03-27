@@ -1,69 +1,69 @@
 <template>
-  <section class="flex items-center justify-center min-h-screen bg-white px-4 py-8 font-sans antialiased">
+  <section
+    class="flex items-center justify-center min-h-screen bg-white px-4 py-8 font-sans antialiased"
+  >
     <div class="max-w-3xl text-center">
-      <!-- Badge -->
-      <span 
+      <span
         class="inline-block bg-gray-100 text-gray-900 rounded-full px-5 py-1.5 text-sm font-medium mb-8 animate-fade-in-up"
       >
         Open Source <span class="ml-1">✨</span>
       </span>
 
-      <!-- Title -->
-      <h1 
+      <h1
         class="text-5xl md:text-6xl font-semibold mb-6 text-gray-900 leading-tight tracking-tight animate-fade-in-up"
         style="animation-delay: 200ms;"
       >
         T3VO
       </h1>
 
-      <!-- Description -->
-      <p 
+      <p
         class="text-xl md:text-2xl leading-relaxed text-gray-500 mb-12 max-w-2xl mx-auto font-normal animate-fade-in-up"
         style="animation-delay: 300ms;"
       >
-        Offline Vault for Passwords, Bookmarks & Private Notes.<br class="hidden sm:inline" />
+        Offline Vault for Passwords, Bookmarks & Private Notes.<br
+          class="hidden sm:inline"
+        />
         All encrypted. Offline first. Works Everywhere. No Server Needed.
       </p>
 
-      <!-- Buttons -->
       <div class="animate-fade-in-up" style="animation-delay: 400ms;">
         <div class="flex flex-wrap justify-center gap-4">
-          <a 
-            href="https://app.t3vo.com" 
+          <a
+            href="https://app.t3vo.com"
             class="inline-flex items-center bg-gray-900 text-white font-medium px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-gray-800 hover:-translate-y-0.5"
           >
             APP
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="18" 
-              height="18" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              stroke-width="2" 
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               class="ml-2 transition-transform duration-300 group-hover:translate-x-1"
             >
               <path d="M5 12h14m-7-7 7 7-7 7" />
             </svg>
           </a>
-          
-          <a 
-            href="https://vercel.com/new/clone?repository-url=https://github.com/t3volabs/t3vo-app/tree/latest" 
+
+          <a
+            href="https://vercel.com/new/clone?repository-url=https://github.com/t3volabs/t3vo-app/tree/latest"
             class="inline-flex items-center bg-gray-900 text-white font-medium px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-gray-800 hover:-translate-y-0.5"
           >
             Deploy
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="18" 
-              height="18" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              stroke-width="2" 
-              stroke-linecap="round" 
-              stroke-linejoin="round" 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               class="ml-2 transition-transform duration-300 group-hover:translate-x-1"
             >
               <path d="M5 12h14m-7-7 7 7-7 7" />
